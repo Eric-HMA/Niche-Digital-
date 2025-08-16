@@ -200,6 +200,16 @@ const ContactSection = () => {
                 </p>
               </div>
 
+              {/* Error Message */}
+              {error && (
+                <div className="bg-red-50 border border-red-200 rounded-lg p-4 flex items-start space-x-3">
+                  <AlertCircle size={20} className="text-red-600 mt-0.5 flex-shrink-0" />
+                  <div className="text-sm text-red-700">
+                    {error}
+                  </div>
+                </div>
+              )}
+
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-4">
                   <div className="space-y-2">
@@ -212,10 +222,33 @@ const ContactSection = () => {
                       value={formData.name}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#ECEC75] focus:border-transparent transition-all duration-200"
+                      className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#ECEC75] focus:border-transparent transition-all duration-200 ${
+                        fieldErrors.name ? 'border-red-300 bg-red-50' : 'border-gray-300'
+                      }`}
                       placeholder="Your full name"
+                      disabled={isLoading}
+                    />
+                    {fieldErrors.name && (
+                      <p className="text-sm text-red-600">{fieldErrors.name}</p>
+                    )}
+                  </div>
+                  <div className="space-y-2">
+                    <label className="sans-body text-sm font-medium text-gray-700">
+                      Business Name
+                    </label>
+                    <input
+                      type="text"
+                      name="business_name"
+                      value={formData.business_name}
+                      onChange={handleInputChange}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#ECEC75] focus:border-transparent transition-all duration-200"
+                      placeholder="Your business name (optional)"
+                      disabled={isLoading}
                     />
                   </div>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <label className="sans-body text-sm font-medium text-gray-700">
                       Email Address *
@@ -226,13 +259,16 @@ const ContactSection = () => {
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#ECEC75] focus:border-transparent transition-all duration-200"
+                      className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#ECEC75] focus:border-transparent transition-all duration-200 ${
+                        fieldErrors.email ? 'border-red-300 bg-red-50' : 'border-gray-300'
+                      }`}
                       placeholder="your@email.com"
+                      disabled={isLoading}
                     />
+                    {fieldErrors.email && (
+                      <p className="text-sm text-red-600">{fieldErrors.email}</p>
+                    )}
                   </div>
-                </div>
-
-                <div className="grid md:grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <label className="sans-body text-sm font-medium text-gray-700">
                       Phone Number
@@ -242,28 +278,36 @@ const ContactSection = () => {
                       name="phone"
                       value={formData.phone}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#ECEC75] focus:border-transparent transition-all duration-200"
+                      className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#ECEC75] focus:border-transparent transition-all duration-200 ${
+                        fieldErrors.phone ? 'border-red-300 bg-red-50' : 'border-gray-300'
+                      }`}
                       placeholder="+66 XX XXX XXXX"
+                      disabled={isLoading}
                     />
+                    {fieldErrors.phone && (
+                      <p className="text-sm text-red-600">{fieldErrors.phone}</p>
+                    )}
                   </div>
-                  <div className="space-y-2">
-                    <label className="sans-body text-sm font-medium text-gray-700">
-                      Service Interest
-                    </label>
-                    <select
-                      name="service"
-                      value={formData.service}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#ECEC75] focus:border-transparent transition-all duration-200"
-                    >
-                      <option value="">Select a service</option>
-                      {services.map((service, index) => (
-                        <option key={index} value={service}>
-                          {service}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
+                </div>
+
+                <div className="space-y-2">
+                  <label className="sans-body text-sm font-medium text-gray-700">
+                    Service Interest
+                  </label>
+                  <select
+                    name="service"
+                    value={formData.service}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#ECEC75] focus:border-transparent transition-all duration-200"
+                    disabled={isLoading}
+                  >
+                    <option value="">Select a service</option>
+                    {services.map((service, index) => (
+                      <option key={index} value={service}>
+                        {service}
+                      </option>
+                    ))}
+                  </select>
                 </div>
 
                 <div className="space-y-2">
@@ -275,18 +319,41 @@ const ContactSection = () => {
                     value={formData.message}
                     onChange={handleInputChange}
                     rows={4}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#ECEC75] focus:border-transparent transition-all duration-200 resize-vertical"
+                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#ECEC75] focus:border-transparent transition-all duration-200 resize-vertical ${
+                      fieldErrors.message ? 'border-red-300 bg-red-50' : 'border-gray-300'
+                    }`}
                     placeholder="Describe your business, goals, and what you're looking to achieve with digital marketing..."
+                    disabled={isLoading}
                   />
+                  {fieldErrors.message && (
+                    <p className="text-sm text-red-600">{fieldErrors.message}</p>
+                  )}
+                  <p className="text-xs text-gray-500">
+                    {formData.message.length}/2000 characters
+                  </p>
                 </div>
 
                 <button
                   type="submit"
-                  className="btn-primary w-full md:w-auto inline-flex items-center justify-center space-x-2"
+                  disabled={isLoading}
+                  className={`w-full md:w-auto inline-flex items-center justify-center space-x-2 px-8 py-3 rounded-lg font-semibold transition-all duration-200 ${
+                    isLoading 
+                      ? 'bg-gray-400 text-gray-200 cursor-not-allowed' 
+                      : 'btn-primary hover:transform hover:scale-105'
+                  }`}
                 >
-                  <Send size={18} />
-                  <span>Send Message</span>
-                  <ArrowRight size={16} />
+                  {isLoading ? (
+                    <>
+                      <div className="animate-spin w-4 h-4 border-2 border-white border-t-transparent rounded-full"></div>
+                      <span>Sending...</span>
+                    </>
+                  ) : (
+                    <>
+                      <Send size={18} />
+                      <span>Send Message</span>
+                      <ArrowRight size={16} />
+                    </>
+                  )}
                 </button>
               </form>
             </div>
