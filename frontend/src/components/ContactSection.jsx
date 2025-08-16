@@ -131,7 +131,8 @@ const ContactSection = () => {
     'Google & Google Maps Marketing',
     'Website Creation',
     'Full Package (All Services)',
-    'Consultation Only'
+    'Consultation Only',
+    'Other'
   ];
 
   if (isSubmitted) {
