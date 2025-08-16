@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
-import { Phone, Mail, MapPin, Send, CheckCircle, ArrowRight } from 'lucide-react';
+import { Phone, Mail, MapPin, Send, CheckCircle, ArrowRight, AlertCircle } from 'lucide-react';
 import { contactInfo } from '../data/mock';
+import axios from 'axios';
+
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const API = `${BACKEND_URL}/api`;
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
