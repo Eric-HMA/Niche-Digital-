@@ -26,23 +26,103 @@ const ContactSection = () => {
       ...prev,
       [name]: value
     }));
+    
+    // Clear field error when user starts typing
+    if (fieldErrors[name]) {
+      setFieldErrors(prev => ({
+        ...prev,
+        [name]: ''
+      }));
+    }
+    
+    // Clear general error
+    if (error) {
+      setError('');
+    }
   };
 
-  const handleSubmit = (e) => {
+  const validateForm = () => {
+    const errors = {};
+    
+    if (!formData.name.trim()) {
+      errors.name = 'Name is required';
+    } else if (formData.name.trim().length < 2) {
+      errors.name = 'Name must be at least 2 characters';
+    }
+    
+    if (!formData.email.trim()) {
+      errors.email = 'Email is required';
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      errors.email = 'Please enter a valid email address';
+    }
+    
+    if (formData.phone && formData.phone.length > 0) {
+      const phoneClean = formData.phone.replace(/\D/g, '');
+      if (phoneClean.length < 8 || phoneClean.length > 15) {
+        errors.phone = 'Please enter a valid phone number';
+      }
+    }
+    
+    if (formData.message && formData.message.length > 2000) {
+      errors.message = 'Message is too long (max 2000 characters)';
+    }
+    
+    setFieldErrors(errors);
+    return Object.keys(errors).length === 0;
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Mock form submission
-    console.log('Form submitted:', formData);
-    setIsSubmitted(true);
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        service: '',
-        message: ''
+    
+    if (!validateForm()) {
+      return;
+    }
+    
+    setIsLoading(true);
+    setError('');
+    
+    try {
+      const response = await axios.post(`${API}/contact`, {
+        name: formData.name.trim(),
+        business_name: formData.business_name.trim() || undefined,
+        email: formData.email.trim(),
+        phone: formData.phone.trim() || undefined,
+        service: formData.service || undefined,
+        message: formData.message.trim() || undefined
       });
-    }, 3000);
+      
+      if (response.data.success) {
+        setIsSubmitted(true);
+        // Reset form after successful submission
+        setTimeout(() => {
+          setIsSubmitted(false);
+          setFormData({
+            name: '',
+            business_name: '',
+            email: '',
+            phone: '',
+            service: '',
+            message: ''
+          });
+        }, 5000);
+      } else {
+        setError(response.data.message || 'Something went wrong. Please try again.');
+      }
+    } catch (err) {
+      console.error('Form submission error:', err);
+      
+      if (err.response?.status === 429) {
+        setError('Too many requests. Please wait a moment before trying again.');
+      } else if (err.response?.status === 400) {
+        setError(err.response.data.detail || 'Please check your information and try again.');
+      } else if (err.response?.data?.message) {
+        setError(err.response.data.message);
+      } else {
+        setError('Unable to send your message. Please try again or contact us directly.');
+      }
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const services = [
