@@ -9,12 +9,16 @@ const API = `${BACKEND_URL}/api`;
 const ContactSection = () => {
   const [formData, setFormData] = useState({
     name: '',
+    business_name: '',
     email: '',
     phone: '',
     service: '',
     message: ''
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState('');
+  const [fieldErrors, setFieldErrors] = useState({});
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
