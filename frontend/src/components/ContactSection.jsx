@@ -141,16 +141,29 @@ const ContactSection = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <div className="card-lime bg-[#ECEC75] max-w-md mx-auto">
-              <div className="space-y-6">
-                <div className="w-16 h-16 mx-auto bg-green-100 rounded-full flex items-center justify-center">
-                  <CheckCircle size={32} className="text-green-600" />
+              <div className="text-center space-y-8">
+                <h3 className="serif-heading text-2xl lg:text-3xl font-bold text-[#0f172a]">
+                  Thank You!
+                </h3>
+                
+                <div className="space-y-4">
+                  <div className="w-16 h-16 mx-auto bg-green-100 rounded-full flex items-center justify-center">
+                    <CheckCircle size={32} className="text-green-600" />
+                  </div>
+                  <div className="space-y-2">
+                    <p className="sans-body text-base text-gray-700">
+                      We've received your message and will get back to you within 24 hours.
+                    </p>
+                    <p className="sans-body text-sm text-gray-600">
+                      You should also receive a confirmation email shortly.
+                    </p>
+                  </div>
                 </div>
-                <div className="space-y-2">
-                  <h3 className="serif-heading text-2xl font-bold text-[#0f172a]">
-                    Thank You!
-                  </h3>
-                  <p className="sans-body text-sm text-gray-700">
-                    We've received your message and will get back to you within 24 hours.
+                
+                <div className="pt-4">
+                  <p className="sans-body text-sm text-gray-600">
+                    Need immediate assistance? <br />
+                    📧 {contactInfo.email} | 📱 {contactInfo.phone}
                   </p>
                 </div>
               </div>
