@@ -151,16 +151,18 @@ const Footer = () => {
                 </div>
               </div>
 
-              {/* CTA */}
-              <<div className="pt-4">
-  <button 
-    onClick={() => scrollToSection('#contact')}
-    className="bg-[#0d3b66] text-white px-6 py-3 rounded-lg font-semibold text-sm hover:bg-[#145388] transition-colors duration-200"
-  >
-    Get Free Consultation
-  </button>
-</div>
-<
+                            {/* CTA */}
+              <div className="pt-4">
+                <button 
+                  onClick={() => scrollToSection('#contact')}
+                  className="bg-[#0d3b66] text-white px-6 py-3 rounded-lg font-semibold text-sm hover:bg-[#145388] transition-colors duration-200"
+                >
+                  Get Free Consultation
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
 
         {/* Bottom Bar */}
         <div className="border-t border-gray-700 py-8">
@@ -181,6 +183,8 @@ const Footer = () => {
       </div>
     </footer>
   );
+};
+
 };
 
 export default Footer;
