@@ -153,16 +153,13 @@ const Footer = () => {
 
               {/* CTA */}
               <div className="pt-4">
-                <button 
-                  onClick={() => scrollToSection('#contact')}
-                  className="bg-[#ECEC75] text-[#0f172a] px-6 py-3 rounded-lg font-semibold text-sm hover:bg-[#e6e67c] transition-colors duration-200"
-                >
-                  Get Free Consultation
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
+  <button 
+    onClick={() => scrollToSection('#contact')}
+    className="bg-[#0d3b66] text-white px-6 py-3 rounded-lg font-semibold text-sm hover:bg-[#145388] transition-colors duration-200"
+  >
+    Get Free Consultation
+  </button>
+</div>
 
         {/* Bottom Bar */}
         <div className="border-t border-gray-700 py-8">
