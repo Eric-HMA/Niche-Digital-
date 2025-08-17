@@ -42,7 +42,7 @@ const Footer = () => {
                     alt={companyInfo.logoAlt}
                     className="h-10 w-auto"
                   />
-                  <span className="serif-heading text-xl font-bold">
+                  <span className="serif-heading text-xl font-bold text-white">
                     {companyInfo.name}
                   </span>
                 </div>
@@ -54,7 +54,9 @@ const Footer = () => {
 
               {/* Social Links */}
               <div className="space-y-3">
-                <h4 className="serif-heading text-sm font-semibold">Follow Us</h4>
+                <h4 className="serif-heading text-sm font-semibold text-[#ECEC75]">
+                  Follow Us
+                </h4>
                 <div className="flex space-x-4">
                   <a 
                     href="#" 
@@ -80,7 +82,9 @@ const Footer = () => {
 
             {/* Quick Links */}
             <div className="space-y-6">
-              <h4 className="serif-heading text-lg font-semibold">Quick Links</h4>
+              <h4 className="serif-heading text-lg font-semibold text-[#ECEC75]">
+                Quick Links
+              </h4>
               <nav className="space-y-3">
                 {quickLinks.map((link) => (
                   <button
@@ -96,7 +100,9 @@ const Footer = () => {
 
             {/* Services */}
             <div className="space-y-6">
-              <h4 className="serif-heading text-lg font-semibold">Our Services</h4>
+              <h4 className="serif-heading text-lg font-semibold text-[#ECEC75]">
+                Our Services
+              </h4>
               <div className="space-y-3">
                 {services.map((service, index) => (
                   <div key={index} className="sans-body text-sm text-white">
@@ -108,12 +114,14 @@ const Footer = () => {
 
             {/* Contact Info */}
             <div className="space-y-6">
-              <h4 className="serif-heading text-lg font-semibold">Contact Info</h4>
+              <h4 className="serif-heading text-lg font-semibold text-[#ECEC75]">
+                Contact Info
+              </h4>
               <div className="space-y-4">
                 <div className="flex items-start space-x-3">
                   <Mail size={16} className="text-[#ECEC75] mt-1 flex-shrink-0" />
                   <div className="space-y-1">
-                    <div className="sans-body text-sm font-medium">Email</div>
+                    <div className="sans-body text-sm font-medium text-white">Email</div>
                     <div className="sans-body text-sm text-white">
                       {contactInfo.email}
                     </div>
@@ -122,7 +130,7 @@ const Footer = () => {
                 <div className="flex items-start space-x-3">
                   <Phone size={16} className="text-[#ECEC75] mt-1 flex-shrink-0" />
                   <div className="space-y-1">
-                    <div className="sans-body text-sm font-medium">Phone</div>
+                    <div className="sans-body text-sm font-medium text-white">Phone</div>
                     <div className="sans-body text-sm text-white">
                       {contactInfo.phone}
                     </div>
@@ -131,7 +139,7 @@ const Footer = () => {
                 <div className="flex items-start space-x-3">
                   <MapPin size={16} className="text-[#ECEC75] mt-1 flex-shrink-0" />
                   <div className="space-y-1">
-                    <div className="sans-body text-sm font-medium">Location</div>
+                    <div className="sans-body text-sm font-medium text-white">Location</div>
                     <div className="sans-body text-sm text-white">
                       Thailand
                     </div>
