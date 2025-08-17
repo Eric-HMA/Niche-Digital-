@@ -46,7 +46,7 @@ const Footer = () => {
                     {companyInfo.name}
                   </span>
                 </div>
-                <p className="sans-body text-sm text-gray-300 leading-relaxed">
+                <p className="sans-body text-sm text-white leading-relaxed">
                   Tailored digital marketing solutions that help businesses stand out, 
                   attract their ideal customers, and scale online.
                 </p>
@@ -86,7 +86,7 @@ const Footer = () => {
                   <button
                     key={link.name}
                     onClick={() => scrollToSection(link.href)}
-                    className="block sans-body text-sm text-gray-300 hover:text-[#ECEC75] transition-colors duration-200"
+                    className="block sans-body text-sm text-white hover:text-[#ECEC75] transition-colors duration-200"
                   >
                     {link.name}
                   </button>
@@ -99,7 +99,7 @@ const Footer = () => {
               <h4 className="serif-heading text-lg font-semibold">Our Services</h4>
               <div className="space-y-3">
                 {services.map((service, index) => (
-                  <div key={index} className="sans-body text-sm text-gray-300">
+                  <div key={index} className="sans-body text-sm text-white">
                     {service}
                   </div>
                 ))}
@@ -114,7 +114,7 @@ const Footer = () => {
                   <Mail size={16} className="text-[#ECEC75] mt-1 flex-shrink-0" />
                   <div className="space-y-1">
                     <div className="sans-body text-sm font-medium">Email</div>
-                    <div className="sans-body text-sm text-gray-300">
+                    <div className="sans-body text-sm text-white">
                       {contactInfo.email}
                     </div>
                   </div>
@@ -123,7 +123,7 @@ const Footer = () => {
                   <Phone size={16} className="text-[#ECEC75] mt-1 flex-shrink-0" />
                   <div className="space-y-1">
                     <div className="sans-body text-sm font-medium">Phone</div>
-                    <div className="sans-body text-sm text-gray-300">
+                    <div className="sans-body text-sm text-white">
                       {contactInfo.phone}
                     </div>
                   </div>
@@ -132,7 +132,7 @@ const Footer = () => {
                   <MapPin size={16} className="text-[#ECEC75] mt-1 flex-shrink-0" />
                   <div className="space-y-1">
                     <div className="sans-body text-sm font-medium">Location</div>
-                    <div className="sans-body text-sm text-gray-300">
+                    <div className="sans-body text-sm text-white">
                       Thailand
                     </div>
                   </div>
@@ -155,14 +155,14 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-gray-700 py-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="sans-body text-sm text-gray-400">
+            <div className="sans-body text-sm text-white">
               © {currentYear} {companyInfo.name}. All rights reserved.
             </div>
             <div className="flex items-center space-x-6">
-              <a href="#" className="sans-body text-sm text-gray-400 hover:text-[#ECEC75] transition-colors duration-200">
+              <a href="#" className="sans-body text-sm text-white hover:text-[#ECEC75] transition-colors duration-200">
                 Privacy Policy
               </a>
-              <a href="#" className="sans-body text-sm text-gray-400 hover:text-[#ECEC75] transition-colors duration-200">
+              <a href="#" className="sans-body text-sm text-white hover:text-[#ECEC75] transition-colors duration-200">
                 Terms of Service
               </a>
             </div>
