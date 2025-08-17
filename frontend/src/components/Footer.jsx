@@ -68,21 +68,21 @@ const Footer = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Facebook"
-                    className="w-10 h-10 bg-[#1e293b] rounded-full flex items-center justify-center hover:bg-[#ECEC75] hover:text-[#0f172a] transition-colors duration-200"
+                    className="w-10 h-10 bg-[#1e293b] text-white rounded-full flex items-center justify-center hover:bg-[#ECEC75] hover:text-[#0f172a] transition-colors duration-200"
                   >
                     <Facebook size={18} />
                   </a>
                   <a 
                     href="#"
                     aria-label="Instagram"
-                    className="w-10 h-10 bg-[#1e293b] rounded-full flex items-center justify-center hover:bg-[#ECEC75] hover:text-[#0f172a] transition-colors duration-200"
+                    className="w-10 h-10 bg-[#1e293b] text-white rounded-full flex items-center justify-center hover:bg-[#ECEC75] hover:text-[#0f172a] transition-colors duration-200"
                   >
                     <Instagram size={18} />
                   </a>
                   <a 
                     href="#"
                     aria-label="LinkedIn"
-                    className="w-10 h-10 bg-[#1e293b] rounded-full flex items-center justify-center hover:bg-[#ECEC75] hover:text-[#0f172a] transition-colors duration-200"
+                    className="w-10 h-10 bg-[#1e293b] text-white rounded-full flex items-center justify-center hover:bg-[#ECEC75] hover:text-[#0f172a] transition-colors duration-200"
                   >
                     <Linkedin size={18} />
                   </a>
