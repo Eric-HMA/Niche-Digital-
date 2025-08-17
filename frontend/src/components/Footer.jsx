@@ -152,7 +152,7 @@ const Footer = () => {
               </div>
 
               {/* CTA */}
-              <div className="pt-4">
+              <<div className="pt-4">
   <button 
     onClick={() => scrollToSection('#contact')}
     className="bg-[#0d3b66] text-white px-6 py-3 rounded-lg font-semibold text-sm hover:bg-[#145388] transition-colors duration-200"
@@ -160,6 +160,7 @@ const Footer = () => {
     Get Free Consultation
   </button>
 </div>
+<
 
         {/* Bottom Bar */}
         <div className="border-t border-gray-700 py-8">
