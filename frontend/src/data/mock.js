@@ -344,5 +344,9 @@ export const contactInfo = {
   subtitle: "Let's discuss how we can help you achieve your digital marketing goals",
   cta: "Schedule a Free Consultation",
   email: "nichedigital.marketing9.0@gmail.com",
-  phone: "+66 955 050 811"
+  phone: "+66 955 050 811",
+  address: "Bangkok, Thailand",   // ✅ new
+  social: {                      // ✅ optional social links
+    facebook: "https://www.facebook.com/profile.php?id=61577090491731"
+  }
 };
