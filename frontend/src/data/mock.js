@@ -343,6 +343,6 @@ export const contactInfo = {
   title: "Ready to Grow Your Business?",
   subtitle: "Let's discuss how we can help you achieve your digital marketing goals",
   cta: "Schedule a Free Consultation",
-  email: "hello@nichedigitalmarketing.com",
-  phone: "+66 XX XXX XXXX"
+  email: "nichedigital.marketing9.0@gmail.com",
+  phone: "+66 955 050 811"
 };
