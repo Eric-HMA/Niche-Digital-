@@ -187,3 +187,7 @@ html {
 footer {
   color: white !important;
 }
+
+footer * {
+  color: white !important;
+}
