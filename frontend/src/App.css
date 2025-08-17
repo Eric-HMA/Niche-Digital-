@@ -32,3 +32,10 @@
         transform: rotate(360deg);
     }
 }
+footer {
+  color: white !important;
+}
+
+footer * {
+  color: white !important;
+}
