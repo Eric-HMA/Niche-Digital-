@@ -31,10 +31,10 @@ export const services = [
     pricing: [
       {
         name: 'STARTER BOOST',
-        price: '4,500',
+        price: '6,500',
         currency: 'BAHT/MONTH',
         features: [
-          '5 Branded Posts',
+          '7 Branded Posts',
           'Content Planning & Strategy',
           'Caption Writing with Hashtags & CTA',
           'Media Buying',
@@ -44,11 +44,11 @@ export const services = [
       },
       {
         name: 'SMART GROWTH',
-        price: '7,500',
+        price: '9,500',
         currency: 'BAHT/MONTH',
         popular: true,
         features: [
-          '7 Branded Posts',
+          '10 Branded Posts',
           'Content Planning & Strategy',
           'Caption Writing with Hashtags & CTA',
           'Media Buying',
@@ -58,10 +58,10 @@ export const services = [
       },
       {
         name: 'BRAND POWER',
-        price: '10,000',
+        price: '12,000',
         currency: 'BAHT/MONTH',
         features: [
-          '10 Branded Posts',
+          '15 Branded Posts',
           'Content Planning & Strategy',
           'Caption Writing with Hashtags & CTA',
           'Media Buying',
@@ -95,10 +95,10 @@ export const services = [
     pricing: [
       {
         name: 'STARTER BOOST',
-        price: '4,500',
+        price: '6,500',
         currency: 'BAHT/MONTH',
         features: [
-          '3 Short-Form Videos (15–30 sec)',
+          '5 Short-Form Videos (15–30 sec)',
           'Trend Research & Concept Planning',
           'Script/Caption Writing + Hashtags',
           'Basic Editing & Visual Effects',
@@ -109,11 +109,11 @@ export const services = [
       },
       {
         name: 'SMART GROWTH',
-        price: '7,500',
+        price: '9,500',
         currency: 'BAHT/MONTH',
         popular: true,
         features: [
-          '4 Short-Form Videos',
+          '7 Short-Form Videos',
           'Trend Research + Visual Planning',
           'Script/Caption Writing + Hashtag Optimization',
           'Editing with Effects, Captions & Transitions',
@@ -124,10 +124,10 @@ export const services = [
       },
       {
         name: 'BRAND POWER',
-        price: '10,000',
+        price: '12,000',
         currency: 'BAHT/MONTH',
         features: [
-          '6 High-Impact TikTok Videos',
+          '10 High-Impact TikTok Videos',
           'Trend Forecasting + Creative Direction',
           'Script, Caption & Hook Optimization',
           'Professional Editing',
